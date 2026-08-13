@@ -17,9 +17,10 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Update apt repo
+    - name: Install Essential Tools
       run: |
-        sudo apt-get update --fix-missing || true
+        sudo apt-get update -y || true
+        sudo apt-get install -y --no-install-recommends zip unzip openjdk-17-jdk git build-essential python3-dev
 
     - name: Install Python Dependencies
       run: |
